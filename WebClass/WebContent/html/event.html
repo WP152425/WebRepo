@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+.bgYellow{
+	background-color : yellow;
+}.bgBlue{
+	background-color : blue;
+}
+.bgWhite{
+	background-color : white;
+}
+.border{
+	border : 3px solid red;
+}
+</style>
+<script>
+function changeColor(color){
+	var contain = document.getElementById("container");
+	//contain.style.backgroundColor = color;
+	contain.setAttribute("class", color); //<input type="radio" class="bgYellow">
+}
+
+function toUpperCase(e){
+	//var word = document.getElementById("word");
+	e.value = e.value.toUpperCase();
+}
+
+function addBorder(e){
+	//var box=document.getElementById("box");
+	//e.style.border="3px solid red";
+	e.setAttribute("class", "border");
+}
+
+function removeBorder(e){
+	//var box=document.getElementById("box");
+	//e.style.border="";
+	e.removeAttribute("class");
+}
+</script>
+</head>
+<body onload="alert('웹페이지 로딩됨')">
+<div id = "container">
+<input type="radio" onclick="changeColor('bgYellow');" name="color">노란색
+<input type="radio" onclick="changeColor('bgBlue');" name="color">파란색
+<input type="radio" onclick="changeColor('bgWhite');" name="color">원래대로
+<br>
+<input type="text" id="word" onchange="toUpperCase(this);">
+<br>
+<p id="box" onmouseover="addBorder(this);" onmouseout="removeBorder(this);">
+마우스를 여기로 올려주세요</p>
+</div>
+</body>
+</html>
