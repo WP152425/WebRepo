@@ -7,26 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <title>Bootstrap 실습</title>
+    <link rel="stylesheet" href="../css/join.css">
+    <title>Sign up</title>
     
-    <script>
-    function menu_over(e){
-    	e.setAttribution("class", "nav item active"); // <li class="nav item active">
-    }
-    function menu_out(e){
-    	e.setAttribution("class", "nav item"); // <li class="nav item active">
-    }
-    </script>
-    <style>
-    div.container{
-    	padding-top : 30px;
-    }
-    </style>
+    <script src="../js/menu_mouse.js"></script>
+    
   </head>
   <body>
   <!-- 메뉴바  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" href="home.html">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,31 +24,82 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="a.html">Menu1 <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="bucketList.html">Bucket List<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="p.html">Menu2</a>
+        <a class="nav-link" href="video.html">Funny Video</a>
       </li>
       <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="dom.html">Menu3</a>
+        <a class="nav-link" href="music.html">Music</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" id="loginform">
       <input class="form-control mr-sm-2" type="text" placeholder="Id" aria-label="Id" id = "id" required>
       <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password" id = "password" required>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='join.html'">Sign up</button>
     </form>
   </div>
 </nav>
-	<div class="container"><h1>Hello, Bootstrap!</h1>
-	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
-	</div>
+	<form id="joinform">
+	<div class="container">
+	<input class="form-control mr-sm-2" type="text" placeholder="Name" aria-label="Name" id = "name" required><br>
+	
+	<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="grade" id="grade1" checked > 1학년
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="grade" id="grade2"  > 2학년
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="grade" id="grade3"  > 3학년
+  </label>
+</div>
+<br>
+<div class="form-group">
+    <br>
+    <select class="form-control" id="class">
+      <option>1반</option>
+      <option>2반</option>
+      <option>3반</option>
+      <option>4반</option>
+      <option>5반</option>
+      <option>6반</option>
+    </select>
+  </div>
+	<input class="form-control mr-sm-2" type="text" placeholder="Number" aria-label="Number" id = "number" required><br>
+    
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign up</button>
+	
+</div>
+	
+	</form>
 	
 	<div class="modal" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">로그인결과</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<div class="modal" id="myModal2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">회원가입결과</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -79,31 +120,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   
-  	<script>
-  	$(document).ready(function(){
-  		$('#loginform').submit(function(event) {
-  			// 
-  			event.preventDefault();
-  			
-  			//id, pwd 가져오기
-  			var id = $('#id').val();
-  			var pwd = $('#password').val();
-  			console.log(id, pwd);
-  			
-  			// 서버로 post 방식 전송
-  			$.post("/WebClass/login", {id : id, pwd: pwd}, function(data){
-  				//서버로부터의 응답
-  				//alert(data.form.id + "님 로그인되었습니다.");
-  				var myModal = $('#myModal');
-  				myModal.modal();
-  				myModal.find('.modal-body').text(data.id + "님 로그인되었습니다.");
-  			});
-  		});
-  	});
-  	
-  	/* $(function(){
-  		
-  	});*/
-  	</script>
+  	<script src="../js/login.js"></script>
+  	<script src="../js/join.js"></script>
   </body>
 </html>

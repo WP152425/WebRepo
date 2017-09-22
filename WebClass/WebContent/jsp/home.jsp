@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <title>Bootstrap 실습</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>Bootstrap Test</title>
     
     <script>
     function menu_over(e){
@@ -24,7 +27,7 @@
     </style>
   </head>
   <body>
-  <!-- 메뉴바  -->
+  <!-- ë©ë´ë°  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,17 +35,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="a.html">Menu1 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="p.html">Menu2</a>
-      </li>
-      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
-        <a class="nav-link" href="dom.html">Menu3</a>
-      </li>
-    </ul>
+    <%@ include file="menu.jsp" %>
     <form class="form-inline my-2 my-lg-0" id="loginform">
       <input class="form-control mr-sm-2" type="text" placeholder="Id" aria-label="Id" id = "id" required>
       <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password" id = "password" required>
@@ -54,24 +47,8 @@
 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
 	</div>
 	
-	<div class="modal" id="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">로그인결과</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+	<%@ include file="modal.jsp" %>
+	<%@ include file="footer.jsp" %>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -85,18 +62,18 @@
   			// 
   			event.preventDefault();
   			
-  			//id, pwd 가져오기
+  			//id, pwd ê°ì ¸ì¤ê¸°
   			var id = $('#id').val();
   			var pwd = $('#password').val();
   			console.log(id, pwd);
   			
-  			// 서버로 post 방식 전송
+  			// ìë²ë¡ post ë°©ì ì ì¡
   			$.post("/WebClass/login", {id : id, pwd: pwd}, function(data){
-  				//서버로부터의 응답
-  				//alert(data.form.id + "님 로그인되었습니다.");
+  				//ìë²ë¡ë¶í°ì ìëµ
+  				//alert(data.form.id + "ë ë¡ê·¸ì¸ëììµëë¤.");
   				var myModal = $('#myModal');
   				myModal.modal();
-  				myModal.find('.modal-body').text(data.id + "님 로그인되었습니다.");
+  				myModal.find('.modal-body').text(data.id + "님 로그인 되었습니다.");
   			});
   		});
   	});
