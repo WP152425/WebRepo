@@ -29,6 +29,7 @@ public class sessionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		// session에 사용자 정보가 없으면 login.jsp로 포워딩
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user") == null){
