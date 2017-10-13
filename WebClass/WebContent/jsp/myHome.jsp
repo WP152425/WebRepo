@@ -44,7 +44,7 @@
     %>
     <form class="form-inline my-2 my-lg-0" id="loginform" action="/WebClass/bloglogin" method="post">
       <input class="form-control mr-sm-2" type="email" placeholder="Id" aria-label="Id" name = "id" id = "id" value = "<%=request.getParameter("id") == null ? "" : request.getParameter("id") %>" required>
-      <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password" name = "pwd" id = "password" value = "<%=request.getParameter("pwd") == null ? "" : request.getParameter("pwd") %>" required>
+      <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password" name = "pwd" id = "password" required>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
       <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='join.html'">Sign up</button>
     </form>
